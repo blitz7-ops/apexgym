@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-apex-black text-white font-sans antialiased overflow-x-hidden selection:bg-apex-blue selection:text-white;
+  }
+  
+  h1, h2, h3 {
+    @apply font-display tracking-tight uppercase;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a20;
+  border-radius: 4px;
+  border: 1px solid #222226;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0052FF;
+}
+
+/* Glassmorphism Styles */
+.glass-navbar {
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(22, 22, 26, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  background: rgba(22, 22, 26, 0.85);
+  border-color: rgba(0, 82, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 82, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.glass-card-green-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-green-hover:hover {
+  background: rgba(22, 22, 26, 0.85);
+  border-color: rgba(0, 255, 102, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 102, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Neon Text Glow */
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(0, 82, 255, 0.5), 0 0 20px rgba(0, 82, 255, 0.2);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.5), 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+/* Mouse lighting effect */
+.mouse-glow-bg {
+  background: radial-gradient(600px circle at var(--x) var(--y), rgba(0, 82, 255, 0.08), transparent 40%);
+}
+
+.mouse-glow-bg-green {
+  background: radial-gradient(600px circle at var(--x) var(--y), rgba(0, 255, 102, 0.06), transparent 40%);
+}
+
+/* Grid Lines Overlay */
+.grid-lines-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ripple Button Effect styling */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Before & After Slider custom range input */
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: ew-resize;
+  box-shadow: 0 0 15px rgba(0, 82, 255, 0.5);
+  border: 4px solid #0052FF;
+}
+
+.slider-input::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: ew-resize;
+  box-shadow: 0 0 15px rgba(0, 82, 255, 0.5);
+  border: 4px solid #0052FF;
+}
+
+/* Masonry grid custom styling for Safari/other browsers */
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Hide defaults for input file/number spin */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
